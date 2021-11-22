@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ColetivoBar - Bar de Todxs</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="estilos/mainstyle.css">
+    <link rel="stylesheet" href="estilos/curriculo.css">
+</head>
+
+<body>
+    <header>
+        <div class="divheader">
+            <a href="https://www.instagram.com/coletivobar"><img class="insta" src="img/instagram2.png"
+                    alt="instagram"></a>
+            <a href="https://www.instagram.com/coletivobar"><img class="insta" id="logoinsta" src="img/instagram.png"
+                    alt="instagram"></a>
+            <a href="https://www.facebook.com/coletivobar"><img class="face" src="img/facebook2.png" alt="facebook"></a>
+            <a href="https://www.facebook.com/coletivobar"><img class="face" id="logoface" src="img/facebook.png"
+                    alt="facebook"></a>
+        </div>
+        <div id="coletivohead">/coletivobar</div>
+    </header>
+    <nav>
+        <div class="navdiv" style="position:absolute;
+margin-left: 186px;
+width: 50px;">
+            <a href="index.html">Início</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 236px;
+width: 80px;">
+            <a href="cardapio.html">Cardápio</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 316px;
+width: 120px; 
+">
+            <a href="quemsomos.html">Quem Somos</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 436px;
+width: 90px;">
+            <a href="momentos.html">Momentos</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 525px;
+width: 125px;
+">
+            <a href="faleconosco.html">Fale Conosco</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 646px;
+width: 125px;">
+            <a href="cadastro.html"> Cadastre-se</a>
+        </div>
+        <div style="position:absolute;
+        margin-left: 773px;
+        background-color: #F7BB26; 
+        width: 125px;
+        text-align: center;
+        padding-bottom: 2px;
+        border-right: 2px solid #F7BB26;">
+            <a href="curriculo.html"><b> Trabalhe aqui</b></a>
+        </div>
+    </nav>
+    <main>
+        <img src="img/trabalheconosco.png" alt="Trabalhe Conosco"
+            style="position:absolute;margin-left: 480px; margin-top: 30px; ">
+        <div id="formulario">
+            <form>
+                <div style="position: absolute; margin-left: 0px; margin-top: 50px;">
+                    <b> Dados Cadastrais </b>
+                    <hr style="text-align: left; width: 495px;">
+                    <div class="descricao"> <label for="iNome">Nome Completo:</label> </div>
+                    <div><input id="iNome" ; placeholder="Digite seu nome completo" ;
+                            onblur="analisarNomeCompleto('Nome')" ; onkeyup=" analisarNum('Nome'); corrigirNome('Nome')"
+                            ; onblur="analisarVazio('Nome')" ; type="name"></div><br>
+                    <p class="errado" id="iErrorNome">&nbsp</p>
+                    <div class="descricao"> <label for="iNomeMae">Nome da Mãe:</label> </div>
+                    <div><input id="iNomeMae" ; placeholder="Digite o nome completo da mãe" ;
+                            onblur="analisarNomeCompleto('NomeMae')" ;
+                            onkeyup=" analisarNum('NomeMae'); corrigirNome('NomeMae')" ;
+                            onblur="analisarVazio('NomeMae')" ; type="name"></div><br>
+                    <p class="errado" id="iErrorNomeMae"> &nbsp</p>
+                    <div class="descricao"> <label for="iIdentidade">Identidade:</label> </div>
+                    <div><input id="iIdentidade" ; placeholder="ex: 12345678-9" ; onkeyup="corrigirNome('Identidade')" ;
+                            onblur="analisarVazio('Identidade'); analisarIdentidade()" ; type="text"></div><br>
+                    <p class="errado" id="iErrorIdentidade">&nbsp </p>
+                    <div class="descricao"> <label for="iCPF">CPF:</label> </div>
+                    <div><input id="iCPF" ; placeholder="ex: 123.456.789-00" ; onkeyup="corrigirNome('CPF')" ;
+                            onblur="analisarVazio('CPF'); analisarCPF()" ; type="text"></div><br>
+                    <p class="errado" id="iErrorCPF"> &nbsp</p>
+                    <div class="descricao"> <label for="iCelular">Celular:</label> </div>
+                    <div><input id="iCelular" ; placeholder="ex: (00) 12345-6789" ; onkeyup="corrigirNome('Celular')" ;
+                            onblur="analisarVazio('Celular'); analisarTelefone()" ; type="tel"></div><br>
+                    <p class="errado" id="iErrorCelular">&nbsp </p>
+                    <div class="descricao"> <label for="iEmail">Email:</label> </div>
+                    <div><input id="iEmail" ; placeholder="ex: fulano@dominio.com" ; onblur="analisarVazio('Email')"
+                            onkeyup="analisarEmail()" ; type="email"></div><br>
+                    <p class="errado" id="iErrorEmail">&nbsp </p>
+                    <div class="descricao"> Sexo: </div>
+                    <div><input style="position: absolute; margin-left: 90px;" id="masc" ; type="radio" ;
+                            name="sexo"><label style="position: absolute; margin-left: 265px;"
+                            for="masc">Masculino</label><br><br>
+                        <input style="position: absolute; margin-left: 90px;" id="fem" ; type="radio" ;
+                            name="sexo"><label style="position: absolute; margin-left: 265px;"
+                            for="fem">Feminino</label>
+                    </div><br><br>
+                    <div class="descricao"> <label for="iNascimento">Data de Nascimento:</label> </div>
+                    <div><input id="iNascimento" ; onblur="analisarVazio('Nascimento')" type="date"></div><br>
+                    <p class="errado" id="iErrorNascimento">&nbsp </p>
+                    <div class="descricao"> <label for="iLocalNasc">Local de Nascimento:</label> </div>
+                    <div><input id="iLocalNasc" ; placeholder="ex: Rio de Janeiro" ; onkeyup=" analisarNum('LocalNasc')"
+                            ; onkeyup="corrigirNome('LocalNasc')" ; onblur="analisarVazio('LocalNasc')" ; type="text">
+                    </div><br>
+                    <p class="errado" id="iErrorLocalNasc">&nbsp </p>
+                    <div class="descricao"> <label for="iEscolaridade">Escolaridade:</label> </div>
+                    <div><select id="iEscolaridade" ; onblur="analisarOpcao('Escolaridade')" ;>
+                            <option value="selecione">Selecione</option>
+                            <option value="1incompleto">1&#186; incompleto</option>
+                            <option value="1completo">1&#186; completo</option>
+                            <option value="2incompleto">2&#186; incompleto</option>
+                            <option value="2completo">2&#186; completo</option>
+                            <option value="3incompleto">3&#186; incompleto</option>
+                            <option value="3completo">3&#186; completo</option>
+                        </select></div><br>
+                    <p class="errado" id="iErrorEscolaridade">&nbsp </p>
+            </form>
+        </div>
+        <div class="formulario">
+            <form>
+                <div style="position: absolute; margin-left: 550px; margin-top: 45px;">
+                    <b> Endereço Completo </b>
+                    <hr style="text-align: left; width: 495px;">
+                    <div class="descricao"> <label for="iRua">Rua:</label> </div>
+                    <div><input id="iRua" ; placeholder="ex: Rua do Limoeiro" ; onkeyup="corrigirNome('Rua')" ;
+                            onblur="analisarVazio('Rua')" ; type="name"></div><br>
+                    <p class="errado" id="iErrorRua">&nbsp </p>
+                    <div class="descricao"> <label for="iComplemento">Complemento:</label> </div>
+                    <div><input id="iComplemento" ; placeholder="ex: apto 203" ; onkeyup="corrigirNome('Complemento')" ;
+                            onblur="analisarVazio('Complemento')" ; type="name"></div><br>
+                    <p class="errado" id="iErrorComplemento">&nbsp</p>
+                    <div class="descricao"> <label for="iBairro">Bairro:</label> </div>
+                    <div><input id="iBairro" ; placeholder="ex: Vila Isabel" ; onkeyup=" analisarNum('Bairro')" ;
+                            onkeyup="corrigirNome('Bairro')" ; onblur="analisarVazio('Bairro')" ; type="name"></div><br>
+                    <p class="errado" id="iErrorBairro">&nbsp </p>
+                    <div class="descricao"> <label for="iCidade">Cidade:</label> </div>
+                    <div><input id="iCidade" ; placeholder="ex: Rio de Janeiro" ; onkeyup=" analisarNum('Cidade'); corrigirNome('Cidade')" ; onblur="analisarVazio('Cidade')" ; type="name"></div>
+                    <br>
+                    <p class="errado" id="iErrorCidade">&nbsp </p>
+                    <div class="descricao"> <label for="uf">UF:</label> </div>
+                    <div><select id="iUF" ; onblur="analisarOpcao('UF')" ;>
+                            <option value="selecione">Selecione</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="SP">São Paulo</option>
+                        </select></div><br>
+                    <p class="errado" id="iErrorUF">&nbsp </p>
+                    <div class="descricao"> <label for="iCEP">CEP:</label> </div>
+                    <div><input id="iCEP" ; placeholder="ex: 12345-000" ; onblur="analisarVazio('CEP'); analisarCEP()" ;
+                            type="name"></div><br>
+                    <p class="errado" id="iErrorCEP">&nbsp </p>
+                    <div class="descricao" style="width: 500px; text-align: left;"> <b> Qual seu diferencial? </b>
+                        <hr style="text-align: left; width: 495px;">
+                    </div><br><br>
+                    <div class="descricao" style="position: absolute; height: 164px; margin-left: 200px;"><textarea
+                            id="iDescricao" ; placeholder="Digite aqui os motivos pelos quais você deve ser contratad" ;
+                            onblur="analisarVazio('Descricao')" ; cols="34" rows="10,7"></textarea><br>
+                        <p class="errado" style="position: absolute; margin-left: 9px;" id="iErrorDescricao">&nbsp </p>
+                    </div>
+                </div>
+        </div>
+        </form>
+        </div>
+        <div><a href="enviado.html"><input id="enviar" type="submit" value="Enviar"
+                    style="position: absolute; margin-left: 1180px; margin-top: 730px"></a></div>
+        </div>
+
+        <script>
+            function analisarVazio(nome) {
+                let aux = document.getElementById('i' + nome).value;
+                if (aux == null || aux == "") {
+                    document.getElementById('iError' + nome).innerHTML = "Campo Obrigatório";
+                    document.getElementById('iError' + nome).style.color = "red";
+                    document.getElementById('iError' + nome).style.fontWeight = "bold";
+                    document.getElementById('i' + nome).style.border = "3px solid red"
+                } else {
+                    document.getElementById('iError' + nome).innerHTML = "&nbsp ";
+                    document.getElementById('i' + nome).style.border = "3px solid #F7BB26";
+                    document.getElementById('i' + nome).value = aux;
+                };
+                aux = aux.trim();
+                document.getElementById('i' + nome).value = aux
+            }
+            function analisarNomeCompleto(nome) {
+                let aux = document.getElementById('i' + nome).value;
+                if (aux.indexOf(" ") == -1) {
+                    document.getElementById('iError' + nome).innerHTML = "Preencha corretamente o campo";
+                    document.getElementById('iError' + nome).style.color = "red";
+                    document.getElementById('iError' + nome).style.fontWeight = "bold";
+                    document.getElementById('i' + nome).style.border = "3px solid red"
+                }
+            }
+            function analisarOpcao(nome) {
+                let aux = document.getElementById('i' + nome).value;
+                if (aux == "selecione") {
+                    document.getElementById('iError' + nome).innerHTML = "Campo Obrigatório";
+                    document.getElementById('iError' + nome).style.color = "red";
+                    document.getElementById('iError' + nome).style.fontWeight = "bold";
+                    document.getElementById('i' + nome).style.border = "3px solid red"
+                } else {
+                    document.getElementById('iError' + nome).innerHTML = "&nbsp ";
+                    document.getElementById('i' + nome).style.border = "3px solid #F7BB26";
+                }
+            }
+            function corrigirNome(nome) {
+                let aux = document.getElementById('i' + nome).value;
+                while (aux.includes(".")) {
+                    aux = aux.replace(".", " ");
+                };
+                while (aux.includes(",")) {
+                    aux = aux.replace(",", " ");
+                };
+                while (aux.includes("-")) {
+                    aux = aux.replace("-", " ");
+                };
+                while (aux.includes("=")) {
+                    aux = aux.replace("=", " ");
+                };
+                while (aux.includes("+")) {
+                    aux = aux.replace("+", " ");
+                };
+                while (aux.includes("]")) {
+                    aux = aux.replace("]", " ");
+                };
+                while (aux.includes("[")) {
+                    aux = aux.replace("[", " ");
+                };
+                while (aux.includes("!")) {
+                    aux = aux.replace("!", " ");
+                };
+                while (aux.includes("?")) {
+                    aux = aux.replace("?", " ");
+                };
+                while (aux.includes(":")) {
+                    aux = aux.replace(":", " ");
+                };
+                while (aux.includes("/")) {
+                    aux = aux.replace("/", " ");
+                };
+                while (aux.includes("|")) {
+                    aux = aux.replace("|", " ");
+                };
+                while (aux.includes("@")) {
+                    aux = aux.replace("@", " ");
+                };
+                while (aux.includes("#")) {
+                    aux = aux.replace("#", " ");
+                };
+                while (aux.includes("$")) {
+                    aux = aux.replace("$", " ");
+                };
+                while (aux.includes("%")) {
+                    aux = aux.replace("%", " ");
+                };
+                while (aux.includes("&")) {
+                    aux = aux.replace("&", " ");
+                };
+                while (aux.includes("*")) {
+                    aux = aux.replace("*", " ");
+                };
+                while (aux.includes(")")) {
+                    aux = aux.replace(")", " ");
+                };
+                while (aux.includes("(")) {
+                    aux = aux.replace("(", " ");
+                };
+                while (aux.includes("{")) {
+                    aux = aux.replace("{", " ");
+                };
+                while (aux.includes("}")) {
+                    aux = aux.replace("}", " ");
+                };
+                while (aux.includes("  ")) {
+                    aux = aux.replace("  ", " ");
+                };
+                document.getElementById('i' + nome).value = aux;
+
+            }
+            function analisarNum(nome) {
+                let aux = document.getElementById('i' + nome).value;
+                if (aux.includes("1") || aux.includes("2") || aux.includes("3") || aux.includes("4") || aux.includes("5") || aux.includes("6") || aux.includes("7") || aux.includes("8") || aux.includes("9") || aux.includes("0")) {
+                    document.getElementById('iError' + nome).innerHTML = "Preencha corretamente o campo";
+                    document.getElementById('iError' + nome).style.color = "red";
+                    document.getElementById('iError' + nome).style.fontStyle = "italic";
+                    document.getElementById('i' + nome).style.border = "3px solid red";
+                } else {
+                    document.getElementById('iError' + nome).innerHTML = "&nbsp ";
+                    document.getElementById('i' + nome).style.border = "3px solid #F7BB26";
+                    document.getElementById('i' + nome).value = aux;
+                }
+            }
+            function analisarEmail() {
+                let aux = document.getElementById('iEmail').value
+                if (aux.includes("@") && aux.includes(".com")) {
+                    document.getElementById('iErrorEmail').innerHTML = "&nbsp ";
+                    document.getElementById('iEmail').style.border = "3px solid #F7BB26";
+                }
+                else {
+                    document.getElementById('iErrorEmail').innerHTML = "Preencha corretamente o campo";
+                    document.getElementById('iErrorEmail').style.color = "red";
+                    document.getElementById('iErrorEmail').style.fontWeight = "bold";
+                    document.getElementById('iEmail').style.border = "3px solid red"
+                }
+            }
+            function analisarTelefone() {
+                let aux = document.getElementById("iCelular").value;
+                while (aux.includes(")") || aux.includes("(") || aux.includes(" ")) {
+                    aux = aux.replace("(", "");
+                    aux = aux.replace(")", "");
+                    aux = aux.replace(" ", "");
+                }
+                let num2 = "0123456789"
+                let aux2 = aux
+                for (let i = 0; i < num2.length; i++) {
+                    while (aux2.includes(num2.charAt(i))) {
+                        aux2 = aux2.replace(num2[i], "")
+                    }
+                }
+                if (aux2 > 0) {
+                    document.getElementById('iErrorCelular').innerHTML = "Preencha corretamente o campo";
+                    document.getElementById('iErrorCelular').style.color = "red";
+                    document.getElementById('iErrorCelular').style.fontWeight = "bold";
+                    document.getElementById('iCelular').style.border = "3px solid red"
+                }
+                if (aux.length == 11) {
+                    document.getElementById("iCelular").style.border = "3px solid #F7BB26";
+                    let teleFormat = "(" + aux.substring(0, 2) + ")" + aux.substring(2);
+                    document.getElementById("iCelular").value = teleFormat;
+                } else {
+                    document.getElementById('iErrorCelular').innerHTML = "Preencha corretamente o campo";
+                    document.getElementById('iErrorCelular').style.color = "red";
+                    document.getElementById('iErrorCelular').style.fontWeight = "bold";
+                    document.getElementById('iCelular').style.border = "3px solid red"
+                }
+            }
+            function analisarCPF() {
+                var aux = document.getElementById("iCPF").value;
+                while (aux.includes(".") || aux.includes("-") || aux.includes(" ")) {
+                    aux = aux.replace(".", "");
+                    aux = aux.replace("-", "");
+                    aux = aux.replace(" ", "");
+
+                }
+                let num2 = "0123456789"
+                let aux2 = aux
+                for (let i = 0; i < num2.length; i++) {
+                    while (aux2.includes(num2.charAt(i))) {
+                        aux2 = aux2.replace(num2[i], "")
+                    }
+                }
+                if (aux2 > 0) {
+                    document.getElementById('iErrorCPF').innerHTML = "Preencha corretamente o campo";
+                    document.getElementById('iErrorCPF').style.color = "red";
+                    document.getElementById('iErrorCPF').style.fontWeight = "bold";
+                    document.getElementById('iCPF').style.border = "3px solid red"
+                }
+                if (aux.length == 11) {
+                    document.getElementById('iCPF').style.border = "3px solid #F7BB26";
+                    let cpfFormat = aux.substring(0, 3) + "." + aux.substring(3, 6) + "." + aux.substring(6, 9) + "-" + aux.substring(9);
+                    document.getElementById("iCPF").value = cpfFormat;
+                } else {
+                    document.getElementById('iErrorCPF').innerHTML = "Preencha corretamente o campo";
+                    document.getElementById('iErrorCPF').style.color = "red";
+                    document.getElementById('iErrorCPF').style.fontWeight = "bold";
+                    document.getElementById('iCPF').style.border = "3px solid red"
+                }
+            }
+            function analisarIdentidade() {
+                var aux = document.getElementById("iIdentidade").value;
+                while (aux.includes(".") || aux.includes("-") || aux.includes(" ")) {
+                    aux = aux.replace(".", "");
+                    aux = aux.replace("-", "");
+                    aux = aux.replace(" ", "");
+
+                }
+                let num2 = "0123456789"
+                let aux2 = aux
+                for (let i = 0; i < num2.length; i++) {
+                    while (aux2.includes(num2.charAt(i))) {
+                        aux2 = aux2.replace(num2[i], "")
+                    }
+                }
+                if (aux2 > 0) {
+                    document.getElementById('iErrorIdentidade').innerHTML = "Preencha corretamente o campo";
+                    document.getElementById('iErrorIdentidade').style.color = "red";
+                    document.getElementById('iErrorIdentidade').style.fontWeight = "bold";
+                    document.getElementById('iIdentidade').style.border = "3px solid red"
+                }
+                if (aux.length == 9) {
+                    document.getElementById('iIdentidade').style.border = "3px solid #F7BB26";
+                    let cpfFormat = aux.substring(0, 2) + " " + aux.substring(2, 5) + " " + aux.substring(5, 8) + "-" + aux.substring(8);
+                    document.getElementById("iIdentidade").value = cpfFormat;
+                } else {
+                    document.getElementById('iErrorIdentidade').innerHTML = "Preencha corretamente o campo";
+                    document.getElementById('iErrorIdentidade').style.color = "red";
+                    document.getElementById('iErrorIdentidade').style.fontWeight = "bold";
+                    document.getElementById('iIdentidade').style.border = "3px solid red"
+                }
+            }
+            function analisarCEP() {
+                var aux = document.getElementById("iCEP").value;
+                while (aux.includes(".") || aux.includes("-") || aux.includes(" ")) {
+                    aux = aux.replace(".", "");
+                    aux = aux.replace("-", "");
+                    aux = aux.replace(" ", "");
+
+                }
+                let num2 = "0123456789"
+                let aux2 = aux
+                for (let i = 0; i < num2.length; i++) {
+                    while (aux2.includes(num2.charAt(i))) {
+                        aux2 = aux2.replace(num2[i], "")
+                    }
+                }
+                if (aux2 > 0) {
+                    document.getElementById('iErrorCEP').innerHTML = "Preencha corretamente o campo";
+                    document.getElementById('iErrorCEP').style.color = "red";
+                    document.getElementById('iErrorCEP').style.fontWeight = "bold";
+                    document.getElementById('iCEP').style.border = "3px solid red"
+                }
+                if (aux.length == 8) {
+                    document.getElementById('iCEP').style.border = "3px solid #F7BB26";
+                    let cpfFormat = aux.substring(0, 5) + "-" + aux.substring(5);
+                    document.getElementById("iCEP").value = cpfFormat;
+                } else {
+                    document.getElementById('iErrorCEP').innerHTML = "Preencha corretamente o campo";
+                    document.getElementById('iErrorCEP').style.color = "red";
+                    document.getElementById('iErrorCEP').style.fontWeight = "bold";
+                    document.getElementById('iCEP').style.border = "3px solid red"
+                }
+            }
+        </script>
+    </main>
+    <footer>
+        <div id="final">
+            <div id="logofinal"><img src="img/logo-02.png" alt="logocoletivo"></div>
+            <div id="meiotafinal">
+                <hr>
+                <p
+                    style="font-family: Georgia, 'Times New Roman', Times, serif; letter-spacing: 3px; line-height: 10px;color: white;">
+                    CONTATO
+                </p>
+                <p class="emailfinal"> coletivobar@coletivobar.com.br</p>
+            </div>
+            <div id="finalfinal">
+                <hr>
+                <a class="endereço" href="http://www.google.com">Rua Visconde de Itamarati, 115 <br>Maracanã, Rio de
+                    Janeiro, (21) 2567-2308</a>
+            </div>
+        </div>
+        <div id="assinatura"> Coletivo Bar. O Bar de Todxs. Todos Direitos Reservados. Desenvolvido por André Mazza
+        </div>
+    </footer>
+
+</body>
+
+</html>

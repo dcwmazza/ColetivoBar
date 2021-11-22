@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ColetivoBar - Bar de Todxs</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="estilos/mainstyle.css">
+    <link rel="stylesheet" href="estilos/faleconosco.css">
+</head>
+
+<body>
+    <header>
+        <div class="divheader">
+            <a href="https://www.instagram.com/coletivobar"><img class="insta" src="img/instagram2.png"
+                    alt="instagram"></a>
+            <a href="https://www.instagram.com/coletivobar"><img class="insta" id="logoinsta" src="img/instagram.png"
+                    alt="instagram"></a>
+            <a href="https://www.facebook.com/coletivobar"><img class="face" src="img/facebook2.png" alt="facebook"></a>
+            <a href="https://www.facebook.com/coletivobar"><img class="face" id="logoface" src="img/facebook.png"
+                    alt="facebook"></a>
+        </div>
+        <div id="coletivohead">/coletivobar</div>
+    </header>
+    <nav>
+        <div class="navdiv" style="position:absolute;
+margin-left: 186px;
+width: 50px;">
+            <a href="index.html">Início</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 236px;
+width: 80px;">
+            <a href="cardapio.html">Cardápio</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 316px;
+width: 120px; 
+">
+            <a href="quemsomos.html">Quem Somos</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 436px;
+width: 90px;">
+            <a href="momentos.html">Momentos</a>
+        </div>
+        <div style="position:absolute;
+margin-left: 525px;
+width: 125px;
+background-color: #F7BB26; 
+text-align: center;
+padding-bottom: 2px;
+border-right: 2px solid #F7BB26;">
+            <a href="faleconosco.html"><b> Fale Conosco</b></a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 646px;
+width: 125px;">
+            <a href="cadastro.html"> Cadastre-se</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+        margin-left: 770px;
+        width: 125px;">
+                    <a href="curriculo.html"> Trabalhe aqui</a>
+                </div>
+    </nav>
+    <main>
+        <div id="formulario">
+            <form>
+                <p> Estamos abertos e ansiosos pela sua opinião. <br> Fale conosco! </p>
+                <div class="descricao"> <label for="nome">Nome:</label> </div>
+                <div><input id="nome" ; type="name"; onkeyup="analisarNome()"; onblur="verificarVazio('nome')"></div><br><br>
+                <hr>
+                <div class="descricao"> <label for="email">Email:</label> </div>
+                <div><input id="email" ; type="email"; onblur="analisarEmail(); verificarVazio('email')"></div><br><br>
+                <hr>
+                <div class="descricao"> <label for="assunto">Assunto:</label> </div>
+                <div><select onblur="analisarAssunto(); " id="assunto">
+                        <option value="escolha">Escolha</option>
+                        <option value="reclamacao">Reclamação</option>
+                        <option value="sugestao">Sugestão</option>
+                        <option value="elogio">Elogio</option>
+                        <option value="outroassunto">Outro Assunto</option>
+                    </select></div><br><br>
+                <hr>
+                <div class="descricao"><label for="mensagem">Mensagem:</label></div><textarea style="resize: none;" onblur="verificarVazio('mensagem')"
+                    name="" id="mensagem" cols="30" rows="10"></textarea>
+               <a onclick="verificarCampos()" href=""><input id="enviar" type="submit" value="Enviar"></a>
+            </form>
+        </div>
+        <script>
+            function verificarVazio(nome){
+            let aux = document.getElementById(nome).value;
+                aux = aux.trim();
+                if (aux == null || aux == "") {
+                    document.getElementById(nome).style.color = "red";
+                    document.getElementById(nome).style.fontStyle = "italic";
+                    document.getElementById(nome).style.border = "3px solid red";
+                } else { 
+                    document.getElementById(nome).style.fontStyle = "normal";
+                    document.getElementById(nome).value = aux;
+                    document.getElementById(nome).color = "black";
+                    document.getElementById(nome).style.border = "3px solid #F7BB26"}}
+            function verificarCampos(){
+                if (document.getElementById('nome').value==""||document.getElementById('email').value==""||document.getElementById('mensagem').value=="") {
+                    alert("Por favor preencher os campos obrigatórios")
+                } 
+            }
+            function analisarNome() {
+                let aux = document.getElementById('nome').value;
+
+                    while (aux.includes(".")) {
+                        aux = aux.replace(".", " ");
+                    };
+                    while (aux.includes(",")) {
+                        aux = aux.replace(",", " ");
+                    };
+                    while (aux.includes("-")) {
+                        aux = aux.replace("-", " ");
+                    };
+                    while (aux.includes("=")) {
+                        aux = aux.replace("=", " ");
+                    };
+                    while (aux.includes("+")) {
+                        aux = aux.replace("+", " ");
+                    };
+                    while (aux.includes("]")) {
+                        aux = aux.replace("]", " ");
+                    };
+                    while (aux.includes("[")) {
+                        aux = aux.replace("[", " ");
+                    };
+                    while (aux.includes("!")) {
+                        aux = aux.replace("!", " ");
+                    };
+                    while (aux.includes("?")) {
+                        aux = aux.replace("?", " ");
+                    };
+                    while (aux.includes(":")) {
+                        aux = aux.replace(":", " ");
+                    };
+                    while (aux.includes("/")) {
+                        aux = aux.replace("/", " ");
+                    };
+                    while (aux.includes("|")) {
+                        aux = aux.replace("|", " ");
+                    };
+                    while (aux.includes("@")) {
+                        aux = aux.replace("@", " ");
+                    };
+                    while (aux.includes("#")) {
+                        aux = aux.replace("#", " ");
+                    };
+                    while (aux.includes("$")) {
+                        aux = aux.replace("$", " ");
+                    };
+                    while (aux.includes("%")) {
+                        aux = aux.replace("%", " ");
+                    };
+                    while (aux.includes("&")) {
+                        aux = aux.replace("&", " ");
+                    };
+                    while (aux.includes("*")) {
+                        aux = aux.replace("*", " ");
+                    };
+                    while (aux.includes(")")) {
+                        aux = aux.replace(")", " ");
+                    };
+                    while (aux.includes("(")) {
+                        aux = aux.replace("(", " ");
+                    };
+                    while (aux.includes("{")) {
+                        aux = aux.replace("{", " ");
+                    };
+                    while (aux.includes("}")) {
+                        aux = aux.replace("}", " ");
+                    };
+                    while (aux.includes("  ")) {
+                        aux = aux.replace("  ", " ");
+
+                        document.getElementById('nome').style.fontStyle = "normal";
+                    }
+                
+                if (aux.includes("1") || aux.includes("2") || aux.includes("3") || aux.includes("4") || aux.includes("5") || aux.includes("6") || aux.includes("7") || aux.includes("8") || aux.includes("9") || aux.includes("0")) {
+                    document.getElementById('nome').value = "Preencha corretamente o campo";
+                    document.getElementById('nome').style.color = "red";
+                    document.getElementById('nome').style.fontStyle = "italic";
+                    document.getElementById('nome').style.border = "3px solid red";
+                } else {
+                    document.getElementById('nome').style.color = "black";
+                    document.getElementById('nome').style.fontStyle = "normal";
+                    document.getElementById('nome').style.border = "3px solid #F7BB26"
+                    document.getElementById('nome').style.backgroundColor = "light green";
+                }
+                document.getElementById('nome').value = aux
+            }
+            function analisarEmail() {
+                let aux = document.getElementById("email").value
+                if (aux.includes("@") && aux.includes(".")) {
+                    document.getElementById("email").style.color = "black";
+                    document.getElementById("email").style.fontStyle = "normal";
+                    document.getElementById("email").style.border = "3px solid #F7BB26";
+                }
+                else {
+                    document.getElementById("email").value = "Preencha corretamente o campo";
+                    document.getElementById("email").style.color = "red";
+                    document.getElementById("email").style.fontStyle = "italic";
+                    document.getElementById("email").style.border = "3px solid red"
+                }
+                aux = aux.toLowerCase();
+                document.getElementById('email').value = aux;
+            }
+            function analisarAssunto() {
+                let aux = document.getElementById('assunto').value
+                if (aux == "escolha") {
+                    document.getElementById("assunto").style.color = "red";
+                    document.getElementById("assunto").style.border = "2px solid red"
+                } else {
+                    document.getElementById("assunto").style.color = "black";
+                    document.getElementById("assunto").style.border = "2px solid #F7BB26"
+                }
+            }
+        </script>
+    </main>
+    <footer>
+        <div id="final">
+            <div id="logofinal"><img src="img/logo-02.png" alt="logocoletivo"></div>
+            <div id="meiotafinal">
+                <hr>
+                <p
+                    style="font-family: Georgia, 'Times New Roman', Times, serif; letter-spacing: 3px; line-height: 10px;color: white;">
+                    CONTATO
+                </p>
+                <p class="emailfinal"> coletivobar@coletivobar.com.br</p>
+            </div>
+            <div id="finalfinal">
+                <hr>
+                <a class="endereço" href="http://www.google.com">Rua Visconde de Itamarati, 115 <br>Maracanã, Rio de
+                    Janeiro, (21) 2567-2308</a>
+            </div>
+        </div>
+        <div id="assinatura"> Coletivo Bar. O Bar de Todxs. Todos Direitos Reservados. Desenvolvido por André Mazza
+        </div>
+    </footer>
+
+</body>
+
+</html>

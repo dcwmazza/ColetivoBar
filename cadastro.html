@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ColetivoBar - Bar de Todxs</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="estilos/mainstyle.css">
+    <link rel="stylesheet" href="estilos/cadastro.css">
+</head>
+
+<body>
+    <header>
+        <div class="divheader">
+            <a href="https://www.instagram.com/coletivobar"><img class="insta" src="img/instagram2.png"
+                    alt="instagram"></a>
+            <a href="https://www.instagram.com/coletivobar"><img class="insta" id="logoinsta" src="img/instagram.png"
+                    alt="instagram"></a>
+            <a href="https://www.facebook.com/coletivobar"><img class="face" src="img/facebook2.png" alt="facebook"></a>
+            <a href="https://www.facebook.com/coletivobar"><img class="face" id="logoface" src="img/facebook.png"
+                    alt="facebook"></a>
+        </div>
+        <div id="coletivohead">/coletivobar</div>
+    </header>
+    <nav>
+        <div class="navdiv" style="position:absolute;
+margin-left: 186px;
+width: 50px;">
+            <a href="index.html">Início</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 236px;
+width: 80px;">
+            <a href="cardapio.html">Cardápio</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 316px;
+width: 120px; 
+">
+            <a href="quemsomos.html">Quem Somos</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 436px;
+width: 90px;">
+            <a href="momentos.html">Momentos</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 525px;
+width: 125px;">
+            <a href="faleconosco.html"> Fale Conosco</a>
+        </div>
+        <div style="position:absolute;
+margin-left: 646px;
+width: 125px;
+background-color: #F7BB26; 
+text-align: center;
+padding-bottom: 2px;
+border-right: 2px solid #F7BB26;">
+            <a href="cadastro.html"> <b> Cadastre-se</b></a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+        margin-left: 770px;
+        width: 125px;">
+                    <a href="curriculo.html"> Trabalhe aqui</a>
+                </div>
+    </nav>
+    <main>
+        <img src="img/cliente.png" alt="Cliente VIP" style="position:absolute;margin-left: 480px; margin-top: 30px; ">
+        <div id="formulario">
+            <form>
+                <div style="position: absolute; margin-left: 0px; margin-top: 50px;">
+                    <b> Dados Cadastrais </b>
+                    <hr>
+                    <div class="descricao"> <label for="nome">Nome:</label> </div>
+                    <div><input onblur="analiseNome('nome'); analiseVazio('nome')" id="nome" ; type="name"></div>
+                    <br><br>
+                    <div class="descricao"> <label for="email">Email:</label> </div>
+                    <div><input id="email" ; onblur="analiseEmail(); analiseVazio('email')" ; type="text"></div><br><br>
+                    <div class="descricao"> <label for="telefone">Telefone:</label> </div>
+                    <div><input id="telefone" ; onblur="tele(); analiseVazio('telefone')" type="text"></div><br><br>
+                    <div class="descricao"> <label for="CPF">CPF:</label> </div>
+                    <div><input id="CPF" ; onblur="cpfnumero(); analiseVazio('CPF')" type="text"></div><br><br>
+                    <div class="descricao"> <label for="nascimento">Aniversário:</label> </div>
+                    <div><input id="nascimento" ; onblur="analiseVazio('nascimento')" type="date"></div><br><br>
+                    <div class="descricao"> <label for="alimentacao">Alimentação:</label> </div>
+                    <div><select id="alimentacao" ;>
+                            <option value="semrestricao">Sem Restrição</option>
+                            <option value="vegetariano">Vegetariana</option>
+                            <option value="vegana">Vegana</option>
+                            <option value="semgluten">Sem Glúten</option>
+                        </select>
+                    </div><br><br>
+                </div>
+                <div style="position: absolute; margin-left: 500px; margin-top: 50px;">
+                    <b> Dados para Entrega </b>
+                    <hr>
+                    <div class="descricao"> <label for="para">Para:</label> </div>
+                    <div><input id="para" ; onblur="analiseNome('para'); analiseVazio('para')" ; type="name"></div>
+                    <br><br>
+                    <div class="descricao"> <label for="nome2">Nome:</label> </div>
+                    <div><input id="nome2" ; onblur="analiseNome('nome2'); analiseVazio('nome2')" ; type="name"></div>
+                    <br><br>
+                    <div class="descricao"> <label for="CEP">CEP:</label> </div>
+                    <div><input id="CEP" ; onblur="analiseVazio('CEP')" type="text" style="width: 80px;"></div>
+                    <p style="font-size: 12px; position: absolute; margin-left: 210px ;"><a id="CEP"
+                            href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank">Clique
+                            aqui</a> se não o souber</p><br><br>
+                    <div class="descricao"> <label for="endereco">Endereço:</label></div>
+                    <div><input id="endereco" ; onblur="analiseNome('endereco'); analiseVazio('endereco')" type="text">
+                    </div><br><br>
+                    <div class="descricao"> <label for="numero">Número:</label> </div>
+                    <div><input id="numero" ; type="text" onblur="analiseVazio('numero')" style="width: 50px;"></div>
+                    <label for="numero"
+                        style="position:absolute; margin-left: 180px;margin-top:5px">Complemento:</label><input
+                        id="numero" ; type="text"
+                        style="width: 50px;position:absolute; margin-left: 300px;margin-top:0px"> <br><br>
+                    <div class="descricao"> <label for="bairro">Bairro:</label> </div>
+                    <div><input id="bairro" ; onblur="analiseNome('bairro'); analiseVazio('bairro')" ; type="text">
+                    </div><br><br>
+                </div>
+                <div style="position: absolute; margin-top: 310px; width: 500px; margin-left: 0px;">
+                    <div style="padding-left: 50px;"><input type="checkbox" name="notificacoes" id="notificacao"><label
+                            for="notificacao" style="position: absolute; margin-top: 5px; text-align: left">Deseja
+                            receber promoções:</label></div>
+                    <input id="enviar" type="submit" value="Enviar" style="position: absolute; margin-left: 840px;">
+                </div>
+            </form>
+        </div>
+
+        <script>
+            function analiseVazio(nome) {
+                var aux = document.getElementById(nome).value;
+                aux=aux.trim();
+                if (aux == null || aux == "") {
+                    document.getElementById(nome).value = "Campo Obrigatório";
+                    document.getElementById(nome).style.color = "red";
+                    document.getElementById(nome).style.border = "2px solid red";
+                
+                }
+            }
+            function analiseNome(nome) {
+                var aux = document.getElementById(nome).value;
+                while (aux.includes(".")) {
+                    aux = aux.replace(".", " ");
+                }
+                while (aux.includes(",")) {
+                    aux = aux.replace(",", " ");
+                }
+                while (aux.includes("!")) {
+                    aux = aux.replace("!", " ");
+                }
+                while (aux.includes("?")) {
+                    aux = aux.replace("?", " ");
+                }
+                while (aux.includes(":")) {
+                    aux = aux.replace(":", " ");
+                }
+                while (aux.includes("  ")) {
+                    aux = aux.replace("  ", " ");
+                }
+                if (aux.includes("1") || aux.includes("2") || aux.includes("3") || aux.includes("4") || aux.includes("5") || aux.includes("6") || aux.includes("7") || aux.includes("8") || aux.includes("9") || aux.includes("0")) {
+                    document.getElementById(nome).value = "Preencha corretamente o campo";
+                    document.getElementById(nome).style.color = "red";
+                    document.getElementById(nome).style.border = "2px solid red";
+                } else {
+                    document.getElementById(nome).style.color = "black";
+                    document.getElementById(nome).style.fontStyle = "regular";
+                    document.getElementById(nome).style.border = "3px solid #F7BB26";
+                }
+                document.getElementById(nome).value = aux
+            }
+            function analiseEmail() {
+                let aux = document.getElementById("email").value
+                if (aux.includes("@") && aux.includes(".com")) {
+                    document.getElementById("email").style.color = "black";
+                    document.getElementById("email").style.fontStyle = "regular";
+                    document.getElementById("email").style.border = "3px solid #F7BB26";
+                }
+                else {
+                    document.getElementById("email").value = "Preencha corretamente o campo";
+                    document.getElementById("email").style.color = "red";
+                    document.getElementById("email").style.border = "2px solid red"
+
+
+                }
+            }
+
+            function tele() {
+                var aux = document.getElementById("telefone").value;
+                while (aux.includes(")") || aux.includes("(")) {
+                    aux = aux.replace("(", "");
+                    aux = aux.replace(")", "");
+                }
+                let num2 = "0123456789"
+                let aux2 = aux
+                for (let i = 0; i < num2.length; i++) {
+                    while (aux2.includes(num2.charAt(i))) {
+                        aux2 = aux2.replace(num2[i], "")
+                    }
+                }
+                if (aux2 > 0) {
+                    document.getElementById("telefone").value = "Preencha corretamente o campo";
+                    document.getElementById("telefone").style.color = "red";
+                    document.getElementById("telefone").style.border = "2px solid red"
+                }
+                if (aux.length == 11) {
+                    document.getElementById("telefone").style.color = "black";
+                    document.getElementById("telefone").style.border = "3px solid #F7BB26";
+                    let teleFormat = "(" + aux.substring(0, 2) + ")" + aux.substring(2);
+                    document.getElementById("telefone").value = teleFormat;
+                } else {
+                    document.getElementById("telefone").value = "Preencha corretamente o campo";
+                    document.getElementById("telefone").style.color = "red";
+                    document.getElementById("telefone").style.border = "2px solid red"
+                }
+            }
+            function cpfnumero() {
+                var aux = document.getElementById("CPF").value;
+                while (aux.includes(".") || aux.includes("-")) {
+                    aux = aux.replace(".", "");
+                    aux = aux.replace("-", "");
+                }
+                let num2 = "0123456789"
+                let aux2 = aux
+                for (let i = 0; i < num2.length; i++) {
+                    while (aux2.includes(num2.charAt(i))) {
+                        aux2 = aux2.replace(num2[i], "")
+                    }
+                }
+                if (aux2 > 0) {
+                    document.getElementById("CPF").value = "Preencha corretamente o campo";
+                    document.getElementById("CPF").style.color = "red";
+                    document.getElementById("CPF").style.border = "2px solid red"
+                }
+                if (aux.length == 11) {
+                    document.getElementById("CPF").style.color = "black";
+                    document.getElementById("CPF").style.border = "3px solid #F7BB26";
+                    let cpfFormat = aux.substring(0, 3) + "." + aux.substring(3, 6) + "." + aux.substring(6, 9) + "-" + aux.substring(9);
+                    document.getElementById("CPF").value = cpfFormat;
+                    console.log(cpfFormat);
+                } else {
+                    document.getElementById("CPF").value = "Preencha corretamente o campo";
+                    document.getElementById("CPF").style.color = "red";
+                    document.getElementById("CPF").style.fontStyle = "italic";
+                    document.getElementById("CPF").style.border = "2px solid red"
+                }
+            }
+
+        </script>
+    </main>
+    <footer>
+        <div id="final">
+            <div id="logofinal"><img src="img/logo-02.png" alt="logocoletivo"></div>
+            <div id="meiotafinal">
+                <hr>
+                <p
+                    style="font-family: Georgia, 'Times New Roman', Times, serif; letter-spacing: 3px; line-height: 10px;color: white;">
+                    CONTATO
+                </p>
+                <p class="emailfinal"> coletivobar@coletivobar.com.br</p>
+            </div>
+            <div id="finalfinal">
+                <hr>
+                <a class="endereço" href="http://www.google.com">Rua Visconde de Itamarati, 115 <br>Maracanã, Rio de
+                    Janeiro, (21) 2567-2308</a>
+            </div>
+        </div>
+        <div id="assinatura"> Coletivo Bar. O Bar de Todxs. Todos Direitos Reservados. Desenvolvido por André Mazza
+        </div>
+    </footer>
+
+</body>
+
+</html>

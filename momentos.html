@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ColetivoBar - Bar de Todxs</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="estilos/mainstyle.css">
+    <link rel="stylesheet" href="estilos/momentos.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="divheader">
+            <a href="https://www.instagram.com/coletivobar"><img class="insta" src="img/instagram2.png"
+                    alt="instagram"></a>
+            <a href="https://www.instagram.com/coletivobar"><img class="insta" id="logoinsta" src="img/instagram.png"
+                    alt="instagram"></a>
+            <a href="https://www.facebook.com/coletivobar"><img class="face" src="img/facebook2.png" alt="facebook"></a>
+            <a href="https://www.facebook.com/coletivobar"><img class="face" id="logoface" src="img/facebook.png"
+                    alt="facebook"></a>
+        </div>
+        <div id="coletivohead">/coletivobar</div>
+    </header>
+    <nav>
+        <div class="navdiv" style="position:absolute;
+margin-left: 186px;
+width: 50px;">
+            <a href="index.html">Início</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 236px;
+width: 80px;">
+            <a href="cardapio.html">Cardápio</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 316px;
+width: 120px; 
+">
+            <a href="quemsomos.html">Quem Somos</a>
+        </div>
+        <div style="position:absolute;
+margin-left: 436px;
+width: 90px;
+background-color: #F7BB26; 
+text-align: center;
+padding-bottom: 2px;
+border-right: 2px solid #F7BB26;">
+            <a href="momentos.html"><b> Momentos</b></a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 525px;
+width: 125px;">
+            <a href="faleconosco.html">Fale Conosco</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+margin-left: 646px;
+width: 125px;">
+            <a href="cadastro.html"> Cadastre-se</a>
+        </div>
+        <div class="navdiv" style="position:absolute;
+        margin-left: 770px;
+        width: 125px;">
+                    <a href="curriculo.html"> Trabalhe aqui</a>
+                </div>
+    </nav>
+    <main>
+        <p style="text-align: center;"> <img src="img/momentos.png" alt="momentos coletivos">
+        </p>
+        <img src="img/anterior.png" alt="botaoAnterior" onclick="recuarFoto()"
+            style="position: absolute; margin-left: 80px; margin-top: 100px; height: 160px; width: 80px;">
+        <img src="img/proximo.png" alt="botaoProximo" onclick="avancarFoto()"
+            style="position: absolute; margin-left: 1180px; margin-top: 100px; height: 160px; width: 80px;">
+
+        <div class="galeria">
+            <div class="polaroid">
+                <img id="fotoEsquerda" src="img/momento4.jpg" alt="momento1">
+                <p class="legenda" id="legenda1">Nosso Cliente André mostrando <br> que  o <b>Coletivo</b> é PetFriendly </p>
+            </div>
+            <div class="polaroid" style="margin-left: 350px">
+                <img id="fotoMeio" src="img/momento1.jpg" alt="momento2">
+                <p class="legenda" id="legenda2"> Aquela resenha  </p>
+            </div>
+            <div class="polaroid" style="margin-left: 700px">
+                <img id="fotoDireita" src="img/momento2.jpg" alt="momento3">
+                <p class="legenda" id="legenda3"> <b>Os inimigos do Fim:</b> Sempre <br> marcando presença aqui com a gente </p>
+            </div>
+        </div>
+        <script>
+            var nFoto = 0;
+            var fotoGaleria = [];
+            fotoGaleria.push("img/momento1.jpg");
+            fotoGaleria.push("img/momento2.jpg");
+            fotoGaleria.push("img/momento3.jpg");
+            fotoGaleria.push("img/momento4.jpg");
+            var legenda = []
+            legenda.push("Aquela resenha");
+            legenda.push("<b>Os inimigos do Fim:</b> Sempre <br> marcando presença aqui com a gente");
+            legenda.push("Além das Cervejas, <br> nossos drinks tem feito muito sucesso")
+            legenda.push("Nosso Cliente André mostrando <br> que  o <b>Coletivo</b> é PetFriendly ")
+
+            function avancarFoto() {
+                nFoto++
+                if (nFoto < fotoGaleria.length) {
+                    document.getElementById("fotoEsquerda").src = fotoGaleria[nFoto - 1];
+                    document.getElementById("legenda1").innerHTML = legenda[nFoto - 1];
+
+                    document.getElementById("fotoMeio").src = fotoGaleria[nFoto];
+                    document.getElementById("legenda2").innerHTML = legenda[nFoto];
+
+                    document.getElementById("fotoDireita").src = fotoGaleria[nFoto + 1];
+                    document.getElementById("legenda3").innerHTML = legenda[nFoto + 1];
+                } else {
+
+                    nFoto = 0
+
+                    document.getElementById("fotoEsquerda").src = fotoGaleria[nFoto - 1];
+                    document.getElementById("legenda1").innerHTML = legenda[nFoto - 1];
+
+                    document.getElementById("fotoMeio").src = fotoGaleria[nFoto];
+                    document.getElementById("legenda2").innerHTML = legenda[nFoto];
+
+                    document.getElementById("fotoDireita").src = fotoGaleria[nFoto + 1];
+                    document.getElementById("legenda3").innerHTML = legenda[nFoto + 1];
+                }
+
+                if (nFoto - 1 < 0) {
+                    document.getElementById("fotoEsquerda").src = fotoGaleria[fotoGaleria.length - 1];
+                    document.getElementById("legenda1").innerHTML = legenda[legenda.length - 1];
+                }
+                if (nFoto + 1 >= fotoGaleria.length) {
+                    document.getElementById("fotoDireita").src = fotoGaleria[0];
+                    document.getElementById("legenda3").innerHTML = legenda[0];
+                }
+            }
+            function recuarFoto() {
+                nFoto--
+                if (nFoto < 0) {
+                    nFoto=fotoGaleria.length - 1
+                    document.getElementById("fotoEsquerda").src = fotoGaleria[nFoto - 1];
+                    document.getElementById("legenda1").innerHTML = legenda[nFoto - 1];
+
+                    document.getElementById("fotoMeio").src = fotoGaleria[nFoto];
+                    document.getElementById("legenda2").innerHTML = legenda[nFoto];
+
+                    document.getElementById("fotoDireita").src = fotoGaleria[0];
+                    document.getElementById("legenda3").innerHTML = legenda[0];
+                } else{
+                    document.getElementById("fotoEsquerda").src = fotoGaleria[nFoto - 1];
+                    document.getElementById("legenda1").innerHTML = legenda[nFoto - 1];
+
+                    document.getElementById("fotoMeio").src = fotoGaleria[nFoto];
+                    document.getElementById("legenda2").innerHTML = legenda[nFoto];
+
+                    document.getElementById("fotoDireita").src = fotoGaleria[nFoto + 1];
+                    document.getElementById("legenda3").innerHTML = legenda[nFoto + 1];
+                } 
+                if (nFoto==0) {
+                    document.getElementById("fotoEsquerda").src = fotoGaleria[fotoGaleria.length - 1];
+                    document.getElementById("legenda1").innerHTML = legenda[legenda.length - 1];
+
+                    document.getElementById("fotoMeio").src = fotoGaleria[nFoto];
+                    document.getElementById("legenda2").innerHTML = legenda[nFoto];
+
+                    document.getElementById("fotoDireita").src = fotoGaleria[nFoto + 1];
+                    document.getElementById("legenda3").innerHTML = legenda[nFoto + 1];
+
+                    
+                }
+            }
+
+        </script>
+    </main>
+    <footer>
+        <div id="final">
+            <div id="logofinal"><img src="img/logo-02.png" alt="logocoletivo"></div>
+            <div id="meiotafinal">
+                <hr>
+                <p
+                    style="font-family: Georgia, 'Times New Roman', Times, serif; letter-spacing: 3px; line-height: 10px;color: white;">
+                    CONTATO
+                </p>
+                <p class="emailfinal"> coletivobar@coletivobar.com.br</p>
+            </div>
+            <div id="finalfinal">
+                <hr>
+                <a class="endereço" href="http://www.google.com">Rua Visconde de Itamarati, 115 <br>Maracanã, Rio de
+                    Janeiro, (21) 2567-2308</a>
+            </div>
+        </div>
+        <div id="assinatura"> Coletivo Bar. O Bar de Todxs. Todos Direitos Reservados. Desenvolvido por André Mazza
+        </div>
+    </footer>
+</body>
+
+</html>

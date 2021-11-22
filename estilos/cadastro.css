@@ -1,0 +1,63 @@
+main{
+height: 450px;
+}
+#formulario{
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 100px;
+    height: 450px;
+    width: 600px;
+}
+#CEP{
+    color:black;
+    font-weight: bold;
+    font-size: 153x;
+}
+#CEP:hover{
+    color:#F7BB26
+}
+form{
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 30px;
+    color: black;
+    letter-spacing: 1px;
+}
+input{
+    height: 20px;
+    background-color: white;
+    width: 290px;
+    position: absolute;
+    margin-left: 110px
+}
+select{
+    height: 30px;
+    background-color: white;
+    width: 290px;
+    position: absolute;
+    margin-left: 110px
+}
+.descricao{
+    position: absolute;
+    margin-left: 0px;
+    margin-top:10px;
+    width: 100px;
+    line-height: 12px;
+    text-align: right;
+}
+#enviar{
+    position: absolute;
+    margin-left: 340px;
+    width: 70px;
+    background-color: #F7BB26;
+    border-radius: 5px;
+    color: black;
+    height: 30px;
+}
+footer{
+    position: absolute;
+    margin-top: 600px;
+}
+hr{
+    width: 410px;
+}

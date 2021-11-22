@@ -1,0 +1,79 @@
+main{
+    height: 1200px;
+}
+
+#pastel{
+    position: absolute;
+    margin-top: 650px;
+    margin-left: 240px;
+}
+#burger{
+    border: 10px solid black;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 200px;
+    padding: 30px;
+    padding-top: 0px;
+    width: 900px;
+    height: 470px;
+}
+.tabelaesquerda{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 0px;
+    width:400px;
+}
+.tabeladireita{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 500px;
+    width:400px
+}
+.tableamarela{
+    background-color: #EFD91C;
+    border: 2px solid #EFD91C;
+}
+.tablepreta{
+    background-color: #241F20;
+    border: 2px solid #241F20;
+}
+
+.descricaocardapio{
+    font-size: 13px;
+    color: #241F20;
+    line-height: 15px;
+    align-self: top;
+}
+.titulo{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 18px;
+}
+.descricao{
+    font-size: 13px;
+    line-height: 15px;
+    padding-top: 0px;
+}
+.preco{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1px;
+    width: 100px;
+    vertical-align: top;
+}
+.complementotabela{
+    height: 10px;
+}
+td{
+    height: 2px;
+    width: 300px;
+    padding: 0px;
+}
+.hrtabela{
+    color: #EFD91C;
+    width: 400px;
+    text-align: left;}
+    footer{
+        position: absolute;
+        margin-top: 1300px;
+    }    
